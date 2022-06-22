@@ -5,6 +5,6 @@
 */
 
 SELECT count(*) FROM tdf_stages
-WHERE Winner='Peter Sagan' and Date>='01.01.2012' and Date<='31.12.2018'
+WHERE Winner='Peter Sagan' and Date BETWEEN '01.01.2012' and '31.12.2018'
 
 
