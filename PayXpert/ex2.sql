@@ -1,4 +1,4 @@
-/*  List of the inventory:.
+/*  Data of the inventory:.
     id and name of the movie, 
     number of movies in each of the stores, 
     id and the address of the store,
@@ -10,6 +10,7 @@ SELECT concat(inventory.film_id,' ', film.title) as film,
     concat(store.manager_staff_id,' ', staff.first_name, ' ', staff.last_name) as manager
    
 FROM inventory
+/* */
 LEFT JOIN film on film.film_id=inventory.film_id
 LEFT JOIN store on store.store_id=inventory.store_id
 LEFT JOIN address on address.address_id=store.address_id

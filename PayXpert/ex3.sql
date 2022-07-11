@@ -26,7 +26,7 @@ LEFT JOIN inventory ON rental.inventory_id=inventory.inventory_id
 LEFT JOIN film ON film.film_id=inventory.film_id
 LEFT JOIN film_category ON film_category.film_id=film.film_id
 LEFT JOIN category ON film_category.category_id=category.category_id
-WHERE payment_date BETWEEN '2007-04-01' AND '2007-10-01'
+WHERE payment_date BETWEEN '2005-10-01' AND '2006-01-01'
 WINDOW w AS (PARTITION BY paymecategorynt.customer_id, category.name )
 ORDER BY _id, amount_cat DESC
  )  
