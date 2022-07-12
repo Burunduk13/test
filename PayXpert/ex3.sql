@@ -27,7 +27,7 @@ LEFT JOIN film ON film.film_id=inventory.film_id
 LEFT JOIN film_category ON film_category.film_id=film.film_id
 LEFT JOIN category ON film_category.category_id=category.category_id
 WHERE payment_date BETWEEN '2005-10-01' AND '2006-01-01'
-WINDOW w AS (PARTITION BY paymecategorynt.customer_id, category.name )
+WINDOW w AS (PARTITION BY payment.customer_id, category.name )
 ORDER BY _id, amount_cat DESC
  )  
 /* add row numbers for every customer*/
@@ -36,7 +36,7 @@ FROM data
 )
 /* select favorite category (the first row) for every customer, 
 selected the 3 top customers (LIMIT 3)*/
-SELECT _id, _customer, email, , amount_all FROM gr_data
+SELECT _id, _customer, email, category, amount_all FROM gr_data
 WHERE rr=1
 ORDER BY amount_all DESC
 LIMIT 3
